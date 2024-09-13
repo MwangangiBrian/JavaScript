@@ -1,1 +1,1 @@
-# JavaScript Challenges 1
+# JavaScript Challenges
