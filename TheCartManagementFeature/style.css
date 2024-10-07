@@ -5,13 +5,11 @@ body {
     padding: 0;
     color: #333;
 }
-
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
 }
-
 .filters, .sort-options {
     display: flex;
     flex-wrap: wrap;
@@ -19,11 +17,9 @@ body {
     margin-bottom: 20px;
     justify-content: center;
 }
-
 .filters label, .filters input, .filters button, .sort-options button {
     margin: 5px;
 }
-
 .filters input, .filters button, .sort-options button {
     padding: 10px;
     border: 1px solid #ccc;
@@ -32,18 +28,15 @@ body {
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
-
 .filters button:hover, .sort-options button:hover {
     background-color: #e0e0e0;
 }
-
 .events, .favorites {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
 }
-
 .event-card, .favorite-card {
     background-color: #fff;
     border: 1px solid #ddd;
@@ -54,30 +47,25 @@ body {
     width: calc(33.333% - 20px);
     max-width: 300px;
 }
-
 .event-card:hover, .favorite-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
-
 .event-card img, .favorite-card img {
     width: 100%;
-    height: 200px; /* Fixed height for images */
-    object-fit: cover; /* Ensures the image covers the area without distortion */
+    height: 200px;
+    object-fit: cover;
     display: block;
 }
-
 .event-card h3, .favorite-card h3 {
     margin: 10px;
     font-size: 1.2em;
 }
-
 .event-card p, .favorite-card p {
     margin: 10px;
     font-size: 0.9em;
     color: #666;
 }
-
 .event-card button, .favorite-card button {
     margin: 10px;
     padding: 10px;
@@ -88,14 +76,79 @@ body {
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
-
 .event-card button:hover, .favorite-card button:hover {
     background-color: #0056b3;
+}
+
+/* New styles for CRUD operations */
+.add-event, .edit-event {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.add-event h2, .edit-event h2 {
+    margin-top: 0;
+    color: #007bff;
+}
+
+#add-event-form, #edit-event-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#add-event-form input, #edit-event-form input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#add-event-form button, #edit-event-form button {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #28a745;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#add-event-form button:hover, #edit-event-form button:hover {
+    background-color: #218838;
+}
+
+.edit-event {
+    display: none; /* Initially hidden */
+}
+
+.event-card .edit-event, .event-card .delete-event {
+    background-color: #ffc107;
+    color: #212529;
+}
+
+.event-card .edit-event:hover, .event-card .delete-event:hover {
+    background-color: #e0a800;
+}
+
+.event-card .delete-event {
+    background-color: #dc3545;
+    color: #fff;
+}
+
+.event-card .delete-event:hover {
+    background-color: #c82333;
 }
 
 @media (max-width: 768px) {
     .event-card, .favorite-card {
         width: calc(50% - 20px);
+    }
+    .add-event, .edit-event {
+        width: 100%;
     }
 }
 
@@ -105,3 +158,40 @@ body {
     }
 }
 
+.container {
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin-top: 30px;
+}
+
+.filters, .sort-options {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.add-event, .edit-event {
+    margin-top: 30px;
+}
+
+.add-event h2, .edit-event h2, .favorites h2 {
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+#add-event-form input, #edit-event-form input {
+    margin-bottom: 10px;
+}
+
+.favorite-card {
+    background-color: #f8f9fa;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+}

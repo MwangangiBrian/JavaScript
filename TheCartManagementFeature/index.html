@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Event Page</title>
-    <link rel="stylesheet" href="./style.css">
+    <title>Event Management</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
     <div class="container">
         <div class="filters">
             <label for="filter-date">Filter by Date:</label>
@@ -18,19 +17,46 @@
             <input type="text" id="filter-location">
             <button id="apply-filters">Apply Filters</button>
         </div>
+
         <div class="sort-options">
             <button id="sort-price-asc">Sort by Price (Asc)</button>
-            <butt on id="sort-price-desc">Sort by Price (Desc)</button>
+            <button id="sort-price-desc">Sort by Price (Desc)</button>
             <button id="sort-date-asc">Sort by Date (Asc)</button>
             <button id="sort-date-desc">Sort by Date (Desc)</button>
         </div>
-        <div class="events" id="events"></div>
+
+        <div id="events" class="events"></div>
+
+        <div class="add-event">
+            <h2>Add New Event</h2>
+            <form id="add-event-form">
+                <input type="text" id="new-event-title" placeholder="Event Title" required>
+                <input type="date" id="new-event-date" required>
+                <input type="text" id="new-event-location" placeholder="Event Location" required>
+                <input type="number" id="new-event-price" placeholder="Event Price" min="0" step="0.01" required>
+                <input type="url" id="new-event-image" placeholder="Image URL" required>
+                <button type="submit">Add Event</button>
+            </form>
+        </div>
+
         <div class="favorites">
             <h2>Cart</h2>
-           
             <div id="favorites-list"></div>
         </div>
+
+        <div class="edit-event" style="display: none;">
+            <h2>Edit Event</h2>
+            <form id="edit-event-form">
+                <input type="hidden" id="edit-event-id">
+                <input type="text" id="edit-event-title" placeholder="Event Title" required>
+                <input type="date" id="edit-event-date" required>
+                <input type="text" id="edit-event-location" placeholder="Event Location" required>
+                <input type="number" id="edit-event-price" placeholder="Event Price" min="0" step="0.01" required>
+                <input type="url" id="edit-event-image" placeholder="Image URL" required>
+                <button type="submit">Update Event</button>
+            </form>
+        </div>
     </div>
-    <script type="module" src="./index.js"></script>
+    <script src="index.js"></script>
 </body>
 </html>
